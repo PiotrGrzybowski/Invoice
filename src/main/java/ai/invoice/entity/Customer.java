@@ -1,11 +1,14 @@
 package ai.invoice.entity;
 
+import ai.invoice.model.Address;
+
 import javax.persistence.Entity;
 
 @Entity
 public class Customer extends BaseEntity {
     private String company;
     private Long nip;
+//    private Address address;
 
     protected Customer() {
 
@@ -14,6 +17,7 @@ public class Customer extends BaseEntity {
     public Customer(String company, Long nip) {
         this.company = company;
         this.nip = nip;
+//        this.address = address;
     }
 
     public String getCompany() {
@@ -31,4 +35,12 @@ public class Customer extends BaseEntity {
     public void setNip(Long nip) {
         this.nip = nip;
     }
+
+//    public Address getAddress() {
+//        return address;
+//    }
+//
+//    public void setAddress(Address address) {
+//        this.address = address;
+//    }
 }
