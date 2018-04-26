@@ -25,11 +25,12 @@ public class DatabaseLoader implements ApplicationRunner {
 
         ArrayList<Customer> bunchOfCustomer = new ArrayList<>();
         String[] companies = {"Microsoft", "Intel", "Apple", "Tesco", "Auchan", "Castorama"};
-        Address[] addresses = {new Address("Wrocław", "Przyjaźni 66", "53-030")};
+        String[] addresses = {"Wrocław Przyjaźni 66, 53-030"};
+        String[] persons = {"Piotr Grzybowski"};
         Long[] nips = {123L, 456L, 678L, 890L, 221L, 311L};
 
         for(int i = 0; i < companies.length; i++) {
-            bunchOfCustomer.add(new Customer(companies[i], nips[i]));
+            bunchOfCustomer.add(new Customer(companies[i], addresses[0], persons[0], nips[i]));
         }
 
         customers.saveAll(bunchOfCustomer);

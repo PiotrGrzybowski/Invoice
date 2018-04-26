@@ -7,17 +7,19 @@ import javax.persistence.Entity;
 @Entity
 public class Customer extends BaseEntity {
     private String company;
+    private String address;
+    private String person;
     private Long nip;
-//    private Address address;
 
     protected Customer() {
 
     }
 
-    public Customer(String company, Long nip) {
+    public Customer(String company, String address, String person, Long nip) {
         this.company = company;
+        this.address = address;
+        this.person = person;
         this.nip = nip;
-//        this.address = address;
     }
 
     public String getCompany() {
@@ -36,11 +38,19 @@ public class Customer extends BaseEntity {
         this.nip = nip;
     }
 
-//    public Address getAddress() {
-//        return address;
-//    }
-//
-//    public void setAddress(Address address) {
-//        this.address = address;
-//    }
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPerson() {
+        return person;
+    }
+
+    public void setPerson(String person) {
+        this.person = person;
+    }
 }
