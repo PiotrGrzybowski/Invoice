@@ -13,7 +13,11 @@ public class BaseEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private final Long id;
 
-    protected BaseEntity() {
+    BaseEntity() {
         this.id = null;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

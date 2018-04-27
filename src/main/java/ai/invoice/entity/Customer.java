@@ -1,7 +1,5 @@
 package ai.invoice.entity;
 
-import ai.invoice.model.Address;
-
 import javax.persistence.Entity;
 
 @Entity
@@ -20,6 +18,13 @@ public class Customer extends BaseEntity {
         this.address = address;
         this.person = person;
         this.nip = nip;
+    }
+
+    public Customer(Customer customer) {
+        this.company = customer.company;
+        this.address = customer.address;
+        this.person = customer.person;
+        this.nip = customer.nip;
     }
 
     public String getCompany() {
