@@ -58,7 +58,7 @@ public class InvoiceController {
             newInvoice.setCustomer(invoice.getCustomer());
             newInvoice.setDate(invoice.getDate());
             newInvoice.setNumber(invoice.getNumber());
-            newInvoice.setProductSells(invoice.getProductSells());
+//            newInvoice.setProductSells(invoice.getProductSells());
 
             return Response.successfulUpdate();
         }

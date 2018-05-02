@@ -35,8 +35,9 @@ public class ProductController {
         return productRepository.findByName(name);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST, consumes="application/json")
     public ResponseEntity<?> addProduct(@RequestBody Product product) {
+        System.out.print("Dupa");
         try {
             productRepository.save(product);
             return Response.successfulCreation();

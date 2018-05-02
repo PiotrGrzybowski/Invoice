@@ -1,9 +1,6 @@
 package ai.invoice.service;
 
-import ai.invoice.entity.Customer;
-import ai.invoice.entity.Invoice;
-import ai.invoice.entity.Product;
-import ai.invoice.entity.ProductSell;
+import ai.invoice.entity.*;
 import ai.invoice.repository.CustomerRepository;
 import ai.invoice.repository.InvoiceRepository;
 import ai.invoice.repository.ProductRepository;
@@ -13,7 +10,6 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -8,7 +8,6 @@ public class InvoiceApplicationTests {
 
     @Test
     public void contextLoads() {
-
     }
 
 }

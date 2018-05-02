@@ -1,7 +1,6 @@
 package ai.invoice.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,17 +9,17 @@ import java.util.List;
 
 @Entity
 @Table(name = "invoices")
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Invoice extends BaseEntity implements Serializable {
     private String date;
     private Integer number;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
-    @JsonBackReference("invoice-customer")
     private Customer customer;
 
     @OneToMany(mappedBy = "invoice", cascade = CascadeType.ALL)
-    @JsonManagedReference("productSell-invoice")
+    @JsonIgnore
     private List<ProductSell> productSells;
 
     protected Invoice() {

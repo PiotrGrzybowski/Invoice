@@ -1,7 +1,9 @@
 package ai.invoice.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -11,18 +13,18 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "product_sells")
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+
 public class ProductSell extends BaseEntity implements Serializable {
     private Double amount;
     private Double price;
 
     @ManyToOne
     @JoinColumn(name = "product_id")
-    @JsonBackReference("product-productSale")
     private Product product;
 
     @ManyToOne
     @JoinColumn(name = "invoice_id")
-    @JsonBackReference("productSell-invoice")
     private Invoice invoice;
 
     public ProductSell() {
