@@ -20,7 +20,7 @@ public class CustomerController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    Collection<Customer> getAllCustomers() {
+    public Collection<Customer> getAllCustomers() {
         return Lists.newArrayList(customerRepository.findAll());
     }
 

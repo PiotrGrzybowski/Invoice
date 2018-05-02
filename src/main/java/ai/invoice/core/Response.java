@@ -13,7 +13,7 @@ public class Response {
     }
 
     public static ResponseEntity<String> successfulUpdate() {
-        return new ResponseEntity<>("Data updated successfully.", HttpStatus.OK);
+        return ResponseEntity.ok("Data updated successfully");
     }
 
     public static ResponseEntity<String> failedUpdate() {

@@ -38,7 +38,7 @@ public class ProductController {
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> addProduct(@RequestBody Product product) {
         try {
-            productRepository.save(new Product(product));
+            productRepository.save(product);
             return Response.successfulCreation();
         } catch (Exception e) {
             return Response.failedCreation();
